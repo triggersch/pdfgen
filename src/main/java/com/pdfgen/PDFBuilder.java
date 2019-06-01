@@ -57,13 +57,10 @@ public class PDFBuilder {
 			heightAfter = baseTable.getHeaderAndDataHeight() + offset + epsilon;		
 			
 			float deltaCadre = heightAfter - heihtBefore;
-			System.out.println("deltaCadre " + deltaCadre);
 			float deltaTablePage = nbrOfPageBefore * pageHeight - heihtBefore;
-			System.out.println("deltaTablePage " + deltaTablePage);
 			
 			if(deltaTablePage < deltaCadre){
 				float delta = nbrOfPageBefore * pageHeight - heihtBefore ;
-				System.out.println("hauteur cadreInséré " + delta);
 				
 				paddinRow.getCells().stream().forEach(c -> c.setHeight(delta -0.1f));
 				paddinRow.setHeight(delta -0.1f);

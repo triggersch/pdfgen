@@ -19,9 +19,9 @@ public class PDFGenMain {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		pdfBuilder.saveDocument("/tmp/out.pdf");
-		System.out.println("done !");
+		String tempPath = System.getProperty("java.io.tmpdir");
+		pdfBuilder.saveDocument(tempPath + "/out.pdf");
+		System.out.println("done ! : " + tempPath + "/out.pdf");
 
 	}
 

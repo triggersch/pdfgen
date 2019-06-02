@@ -1,5 +1,9 @@
 package com.pdfgen;
 
+import java.util.Random;
+
+import org.apache.commons.lang.RandomStringUtils;
+
 public class Content {
 	
 	private String row1;
@@ -7,9 +11,9 @@ public class Content {
 	private String row3;
 	
 	public Content() {
-		row1 = "this is a cell1 with very long text that you cannot now how long it is";
-		row2 = "this is a cell2";
-		row3 = "this is a cell3";
+		row1 = generateRandomString();
+		row2 = generateRandomString();
+		row3 = generateRandomString();
 	}
 	
 	public String getRow1() {
@@ -29,6 +33,12 @@ public class Content {
 	}
 	public void setRow3(String row3) {
 		this.row3 = row3;
+	}
+	
+	private String generateRandomString(){
+		int size = new Random().nextInt(100) + 1;
+	    String generatedString = RandomStringUtils.randomAlphabetic(size);
+	    return generatedString;
 	}
 
 }

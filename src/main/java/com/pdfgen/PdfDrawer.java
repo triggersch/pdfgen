@@ -57,6 +57,11 @@ public abstract class PdfDrawer<T> {
 	
 	public void writeInDocument(List<T> list) throws IOException{
 		
+		if(list.isEmpty()){
+			// no element in list
+			return;
+		}
+		
 		float heihtBefore = 0;
 		float heightAfter = 0;
 		int nbrOfPageBefore  = 0;
